@@ -34,7 +34,7 @@ inv = ax.transData.inverted()
 x0d, _ = inv.transform((bb.x0, bb.y0)); x1d, _ = inv.transform((bb.x1, bb.y0))
 tax_w = abs(x1d - x0d)
 ax.text(60 + tax_w + 8, 55, "360", fontsize=32, color=GOLD, weight="bold", va="center")
-ax.text(62, 96, "Educational Tax Tip  |  June 24, 2026", fontsize=13.5, color=MUTE, va="center")
+ax.text(62, 96, "Educational Tax Tip", fontsize=13.5, color=MUTE, va="center")
 
 # ---- headline ----
 ax.text(60, 182, "Quarterly taxes:", fontsize=32, color=WHITE, weight="bold", va="center")
