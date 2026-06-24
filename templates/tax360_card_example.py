@@ -105,14 +105,14 @@ ax.text(60, H-38, "SHD Advisory | TAX360",
         fontsize=12.5, color=MUTE, va="center")
 ax.text(W-60, H-38, "Source: IRS, FY2023", fontsize=12, color=MUTE, va="center", ha="right")
 
-OUT = "/sessions/focused-friendly-fermat/mnt/outputs/tax360-2026-06-24.png"
-BASE = "/sessions/focused-friendly-fermat/mnt/outputs/_base.png"
+OUT = "/tmp/tax360-card.png"
+BASE = "/tmp/_base.png"
 fig.savefig(BASE, facecolor=NAVY, dpi=150)
 
 # ---- composite the real SHD logo onto a white badge (top-right of header) ----
 from PIL import Image, ImageDraw, ImageChops
 base = Image.open(BASE).convert("RGBA")
-logo = Image.open("/sessions/focused-friendly-fermat/mnt/outputs/shd_logo_raw.png").convert("RGBA")
+logo = Image.open("/tmp/tax360repo/images/shd_logo.png").convert("RGBA")
 # autocrop the white border
 white = Image.new("RGBA", logo.size, (255, 255, 255, 255))
 bbox = ImageChops.difference(logo, white).convert("L").getbbox()
