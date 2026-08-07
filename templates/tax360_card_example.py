@@ -50,7 +50,7 @@ inv=ax.transData.inverted()
 def rbox(x,y,w,h,fc,rad=20):
     ax.add_patch(FancyBboxPatch((x,y),w,h,boxstyle=f"round,pad=0,rounding_size={rad}",fc=fc,ec="none",mutation_aspect=1))
 def T(x,y,s,k,size,color,ha="left",va="center"):
-    return ax.text(x,y,s,fontproperties=fp(k,size),color=color,ha=ha,va=va)
+    return ax.text(x,y,s,fontproperties=fp(k,size),color=color,ha=ha,va=va,parse_math=False)
 def tw(o):
     fig.canvas.draw(); bb=o.get_window_extent()
     a,_=inv.transform((bb.x0,bb.y0)); b,_=inv.transform((bb.x1,bb.y0)); return abs(b-a)
